@@ -7,13 +7,13 @@ export const routes = [
   {
     path: frontendURL('accounts/:accountId/contacts'),
     name: 'contacts_dashboard',
-    roles: ['administrator'],
+    roles: ['administrator', 'agent'],
     component: ContactsView,
   },
   {
     path: frontendURL('accounts/:accountId/labels/:label/contacts'),
     name: 'contacts_labels_dashboard',
-    roles: ['administrator'],
+    roles: ['administrator', 'agent'],
     component: ContactsView,
     props: route => {
       return { label: route.params.label };
@@ -22,7 +22,7 @@ export const routes = [
   {
     path: frontendURL('accounts/:accountId/contacts/:contactId'),
     name: 'contacts_dashboard_manage',
-    roles: ['administrator'],
+    roles: ['administrator', 'agent'],
     component: ContactManageView,
     props: route => {
       return { contactId: route.params.contactId };

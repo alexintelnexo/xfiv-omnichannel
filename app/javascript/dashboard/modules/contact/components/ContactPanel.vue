@@ -11,21 +11,18 @@
       @create-attribute="toggleCustomAttributeModal"
     />
     <edit-contact
-      v-show="false"
       v-if="showEditModal"
       :show="showEditModal"
       :contact="contact"
       @cancel="toggleEditModal"
     />
     <new-conversation
-      v-show="false"
       v-if="enableNewConversation"
       :show="showConversationModal"
       :contact="contact"
       @cancel="toggleConversationModal"
     />
     <add-custom-attribute
-      v-show="false"
       :show="showCustomAttributeModal"
       @cancel="toggleCustomAttributeModal"
       @create="createCustomAttribute"

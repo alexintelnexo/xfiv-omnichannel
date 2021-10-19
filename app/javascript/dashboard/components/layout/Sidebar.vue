@@ -14,13 +14,11 @@
           :menu-item="item"
         />
         <sidebar-item
-          v-show="false"
           v-if="shouldShowTeams"
           :key="teamSection.toState"
           :menu-item="teamSection"
         />
         <sidebar-item
-          v-show="false"
           v-if="shouldShowSidebarItem"
           :key="inboxSection.toState"
           :menu-item="inboxSection"

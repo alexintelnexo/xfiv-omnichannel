@@ -48,7 +48,7 @@
           />
         </div>
       </div>
-      <!--<div class="contact-actions">
+      <div class="contact-actions">
         <woot-button
           v-if="showNewMessage"
           v-tooltip="$t('CONTACT_PANEL.NEW_MESSAGE')"
@@ -109,7 +109,7 @@
         :primary-contact="contact"
         :show="showMergeModal"
         @close="toggleMergeModal"
-      />-->
+      />
     </div>
     <woot-confirm-delete-modal
       v-if="showDeleteModal"
