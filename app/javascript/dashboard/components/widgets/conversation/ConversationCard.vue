@@ -29,8 +29,11 @@
         </span>
       </div>
       <h4 class="conversation--user">
-        {{ currentContact.name }}
+        {{ aditionalAttributeConversation }}
       </h4>
+      <h5 class="conversation--user">
+        {{ currentContact.name }}
+      </h5>
       <p v-if="lastMessageInChat" class="conversation--message">
         <i v-if="isMessagePrivate" class="ion-locked last-message-icon" />
         <i v-else-if="messageByAgent" class="ion-ios-undo last-message-icon" />
@@ -199,6 +202,9 @@ export default {
     inboxName() {
       const stateInbox = this.inbox;
       return stateInbox.name || '';
+    },
+    aditionalAttributeConversation() {
+      return this.chat.additional_attributes.asunto
     },
   },
   methods: {

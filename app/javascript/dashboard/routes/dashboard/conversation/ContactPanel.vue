@@ -13,10 +13,12 @@
         <div>
           <div class="multiselect-wrap--small">
             <contact-details-item
+              v-show="false"
               :title="$t('CONVERSATION_SIDEBAR.ASSIGNEE_LABEL')"
             >
               <template v-slot:button>
                 <woot-button
+                  v-show="false"
                   v-if="showSelfAssign"
                   icon="ion-arrow-right-c"
                   variant="link"
@@ -28,6 +30,7 @@
               </template>
             </contact-details-item>
             <multiselect-dropdown
+              v-show="false"
               :options="agentsList"
               :selected-item="assignedAgent"
               :multiselector-title="$t('AGENT_MGMT.MULTI_SELECTOR.TITLE.AGENT')"

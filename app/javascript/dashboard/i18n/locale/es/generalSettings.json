@@ -19,7 +19,7 @@
         "ERROR": "Por favor, introduzca un nombre de cuenta válido"
       },
       "LANGUAGE": {
-        "LABEL": "Idioma del sitio (Beta)",
+        "LABEL": "Idioma del sitio",
         "PLACEHOLDER": "Tu nombre de cuenta",
         "ERROR": ""
       },
@@ -43,7 +43,7 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Ahora puede recibir emails en su dominio personalizado."
       }
     },
-    "UPDATE_CHATWOOT": "Hay una actualización %{latestChatwootVersion} para Chatwoot disponible. Por favor, actualiza tu instancia."
+    "UPDATE_CHATWOOT": "Hay una actualización %{latestChatwootVersion} para XFIV OMNICHANNEL disponible. Por favor, actualiza tu instancia."
   },
   "FORMS": {
     "MULTISELECT": {
@@ -74,7 +74,7 @@
   },
   "NETWORK": {
     "NOTIFICATION": {
-      "TEXT": "Disconnected from Chatwoot"
+      "TEXT": "Disconnected from Xfiv"
     },
     "BUTTON": {
       "REFRESH": "Refresh"

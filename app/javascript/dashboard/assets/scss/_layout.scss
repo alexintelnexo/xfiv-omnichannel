@@ -81,3 +81,68 @@ body {
     max-width: $space-mega;
   }
 }
+//móvil
+@media (max-width: 700px){
+  .page-title,.page-title[data-v-cdc75a0e]{
+    font-size: 1rem !important;
+  }
+  .resolve .button__content{
+    display:none;
+  }
+  .conversations-list-wrap {
+      width: 17rem!important;
+  }
+}
+//tablets - Ipad
+@media (max-width: 1100px){
+  .page-title,.page-title[data-v-cdc75a0e]{
+  font-size: 1.6rem !important;
+  }
+  .status--filter{
+    width: 20px !important;
+  padding-left: 0.2rem !important;
+    }
+  .conversations-list-wrap{
+    width: 23rem !important;
+  }
+  .user-thumbnail{
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50%;
+    font-size: 10px !important;
+  }
+  .user-thumbnail-box {
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: 0 !important;
+  }
+  .conversation{
+    padding: 0 0 0 0.5rem !important;
+  }
+  .conversation--user{
+    font-size: 12px !important;
+  }
+  .conversation--details .label{
+    font-size: 11px !important;
+  }
+  .conversation--meta{
+      width: 55px !important;
+  }
+  .conversation--meta .timestamp{
+    text-align: end;
+  }
+  .conversation .conversation--message {
+      font-size: 12px;
+  }
+  .conversation-sidebar-wrap{
+      flex-basis: 19em !important;
+    }
+  .cw-accordion--title h5{
+      text-align: start;
+  }
+	.center .text-content p{
+    font-size: 12px;
+    margin-right: 15px;
+    color: #8ea0b7;
+  } 
+}
