@@ -30,7 +30,32 @@ ___
 
 Chatwoot is an open-source omnichannel customer support software. The development of Chatwoot started in 2016. It failed to succeed as a business and eventually shut up shop in 2017. During 2019 #Hacktoberfest, the maintainers decided to make it open-source, instead of letting the code rust in a private repo. With a pleasant surprise, Chatwoot became a trending project on Hacker News and best of all, got lots of love from the community.
 Now, a failed project is back on track and the prospects are looking great. The team is back to working on the project and this time, we are building it in the open. Thanks to the ideas and contributions from the community.
+ 
+### Prerequisites
 
+- Node
+- Rvm
+- Ruby (3.0.2)
+- Rails
+- Postgresql
+- Redis
+- Redis-server
+- imagemagick
+- yarn
+
+## Getting Started
+To get a local copy up and running follow these simple example steps:
+
+- Go to https://github.com/intelnexoec/xfiv-omnichannel and clone the repo using: <br>
+`https://github.com/intelnexoec/xfiv-omnichannel.git` in your terminal.
+
+- Run `bundle install`
+- Run `yarn install`
+- cd /xfiv-omnichannel
+- Add .env file
+- Copy content from this [file](https://raw.githubusercontent.com/chatwoot/chatwoot/master/deployment/setup_20.04.sh) to the .env file.
+- run `rake db:chatwoot_prepare` X2
+- run `rails s`
 
 ## Features
 
@@ -84,6 +109,8 @@ Follow this [link](https://www.chatwoot.com/docs/environment-variables) to under
 ### Other deployment options
 
 Please follow [deployment architecture guide](https://www.chatwoot.com/docs/deployment/architecture) to deploy with Docker or Caprover.
+
+##
 
 ## Security
 
