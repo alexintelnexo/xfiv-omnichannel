@@ -29,7 +29,7 @@
     "bourbon": "^6.0.0",
     "chart.js": "~2.9.4",
     "copy-text-to-clipboard": "2.2.0",
-    "core-js": "3.11.0",
+    "core-js": "3.18.3",
     "country-code-emoji": "^1.0.0",
     "date-fns": "2.21.1",
     "dompurify": "2.2.7",
