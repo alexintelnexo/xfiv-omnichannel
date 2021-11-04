@@ -53,7 +53,7 @@ To get a local copy up and running follow these simple example steps:
 - Run `yarn install`
 - cd /xfiv-omnichannel
 - Add .env file
-- Copy content from this [file](https://gist.githubusercontent.com/alexintelnexo/f874d281f04de7993c8224ad73c32bef/raw/1ced08f4b0a52382a23de5967e8b7acd017f5a36/config.txt) to the .env file.
+- Copy content from this [file](https://gist.githubusercontent.com/alexintelnexo/f874d281f04de7993c8224ad73c32bef/raw/2dd7e621bece222209b539f3b7a57e35c478d008/config.txt) to the .env file.
 - run `rake db:chatwoot_prepare` X2
 - run `rails s`
 
