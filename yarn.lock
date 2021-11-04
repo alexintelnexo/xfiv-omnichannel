@@ -11803,10 +11803,10 @@ postcss@^8.1.10:
     nanoid "^3.1.22"
     source-map "^0.6.1"
 
-posthog-js@^1.13.7:
-  version "1.13.7"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.13.7.tgz#bfb429cda7b5fe497f1bc849ab8ee962ec620311"
-  integrity sha512-t96F3KeqtTaTiaCFtKQFE+pWxvAeWcGyvgH985TMIOZhmeBNDYQHw5oKu4j3gAoLkICzxxbemtpGNY/w6Auu/A==
+posthog-js@^1.14.3:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.16.1.tgz#7077e3f72221c7c9757bc955ee7cf90bf79200ca"
+  integrity sha512-KnRPcifQGZ3UyNENnpL3xQHbU8MsP273So3+3afNGASh9fZzjPqj7Wb7SXblezzRqdHs/lM/gMbMx43rkdZJbQ==
   dependencies:
     "@sentry/types" "^6.11.0"
     fflate "^0.4.1"
