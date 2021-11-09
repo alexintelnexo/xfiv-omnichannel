@@ -2,7 +2,7 @@
   <aside class="sidebar animated shrink columns">
     <div class="logo">
       <router-link :to="dashboardPath" replace>
-        <img src="/brand-assets/logoxfiv.png"  :alt="globalConfig.installationName" />
+        <img src="/brand-assets/logoxfiv.png" alt="Xfiv Omnichannel" />
       </router-link>
     </div>
 

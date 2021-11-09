@@ -2,8 +2,8 @@
   <div class="medium-12 column login">
     <div class="text-center medium-12 login__hero align-self-top">
       <img
-        :src="globalConfig.logo"
-        :alt="globalConfig.installationName"
+        src="/brand-assets/logoxfiv.png"
+        alt="Xfiv Omnichannel"
         class="hero__logo"
       />
       <h2 class="hero__title">
@@ -13,7 +13,7 @@
       </h2>
     </div>
     <div class="row align-center">
-      <div v-if="!email" class="small-12 medium-4 column">
+      <div v-if="!email" class="small-12 medium-6 column">
         <form class="login-box column align-self-top" @submit.prevent="login()">
           <div class="column log-in-form">
             <label :class="{ error: $v.credentials.email.$error }">
