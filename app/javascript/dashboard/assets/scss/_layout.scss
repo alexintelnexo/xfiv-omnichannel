@@ -21,7 +21,7 @@ body {
 .app-content {
   @include flex;
   @include full-height;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .view-box {
