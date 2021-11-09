@@ -134,13 +134,4 @@ export default {
   width: 100%;
   height: 100%;
 }
-//móvil
-@media (max-width: 700px){
-  .conversation-page{
-     display: block;
-  }
-  .conversations-list-wrap{
-    width: 100% !important;
-  }
-}
 </style>

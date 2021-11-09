@@ -113,7 +113,7 @@ export default {
 }
 
 .search-wrap {
-  width: 200px;
+  width: 400px;
   display: flex;
   align-items: center;
   position: relative;

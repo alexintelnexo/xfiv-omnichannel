@@ -20,7 +20,6 @@
           >
             {{ snoozedDisplayText }}
           </span>
-
           <woot-button
             class="user--profile__button margin-right-small"
             size="small"
@@ -29,9 +28,6 @@
           >
             {{ contactPanelToggleText }}
           </woot-button>
-
-     
-         
         </div>
       </div>
     </div>
@@ -56,8 +52,6 @@ import differenceInHours from 'date-fns/differenceInHours';
 import InboxName from '../InboxName';
 
 export default {
- 
-  
   components: {
     InboxName,
     MoreActions,
@@ -73,7 +67,6 @@ export default {
       type: Boolean,
       default: false,
     },
-      
   },
   computed: {
     ...mapGetters({

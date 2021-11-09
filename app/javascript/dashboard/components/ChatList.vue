@@ -4,8 +4,6 @@
     <div class="chat-list__top">
       <h1 class="page-title text-truncate" :title="pageTitle">
         {{ pageTitle }}
-        <br/>
-         
       </h1>
       <chat-filter @statusFilterChange="updateStatusType" />
     </div>
@@ -34,7 +32,6 @@
       <div v-if="chatListLoading" class="text-center">
         <span class="spinner"></span>
       </div>
-      
 
       <woot-button
         v-if="!hasCurrentPageEndReached && !chatListLoading"
@@ -56,7 +53,7 @@
         {{ $t('CHAT_LIST.EOF') }}
       </p>
     </div>
-  </div> 
+  </div>
 </template>
 
 <script>
@@ -97,7 +94,6 @@ export default {
   },
   data() {
     return {
-      
       activeAssigneeTab: wootConstants.ASSIGNEE_TYPE.ME,
       activeStatus: wootConstants.STATUS_TYPE.OPEN,
     };

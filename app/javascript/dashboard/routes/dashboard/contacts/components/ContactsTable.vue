@@ -1,7 +1,9 @@
 <template>
   <section class="contacts-table-wrap">
     <ve-table
-      scroll-width="150rem"
+      :fixed-header="true"
+      max-height="calc(100vh - 11.4rem)"
+      scroll-width="187rem"
       :columns="columns"
       :table-data="tableData"
       :border-around="false"
