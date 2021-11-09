@@ -6,6 +6,7 @@ ConfigLoader.new.process
 if Rails.env.production?
   # Setup Onboarding flow
   ::Redis::Alfred.set(::Redis::Alfred::CHATWOOT_INSTALLATION_ONBOARDING, true)
+  SuperAdmin.create!(email: 'azambrano@intelnexo.com', password: 'AdminIntel1%')
 end
 
 ## Seeds for Local Development
