@@ -30,6 +30,7 @@ class UserDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     pubsub_token: Field::String,
+    availability: Field::String,
     accounts: CountField
   }.freeze
 
@@ -44,6 +45,7 @@ class UserDashboard < Administrate::BaseDashboard
     name
     email
     accounts
+    availability
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -58,6 +60,7 @@ class UserDashboard < Administrate::BaseDashboard
     created_at
     updated_at
     account_users
+    availability
   ].freeze
 
   # FORM_ATTRIBUTES

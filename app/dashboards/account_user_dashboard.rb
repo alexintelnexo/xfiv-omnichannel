@@ -13,6 +13,7 @@ class AccountUserDashboard < Administrate::BaseDashboard
     inviter: Field::BelongsTo.with_options(class_name: 'User', searchable: true, searchable_field: 'name'),
     id: Field::Number,
     role: Field::Select.with_options(collection: AccountUser.roles.keys),
+    availability: Field::Select.with_options(collection: AccountUser.roles.keys),
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -27,6 +28,7 @@ class AccountUserDashboard < Administrate::BaseDashboard
     user
     inviter
     role
+    availability
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,6 +39,7 @@ class AccountUserDashboard < Administrate::BaseDashboard
     inviter
     id
     role
+    availability
     created_at
     updated_at
   ].freeze

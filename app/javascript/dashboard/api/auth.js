@@ -162,6 +162,7 @@ export default {
   },
 
   updateAvailability(availabilityData) {
+    console.log(availabilityData)
     return axios.post(endPoints('availabilityUpdate').url, {
       profile: { ...availabilityData },
     });

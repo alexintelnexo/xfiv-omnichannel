@@ -11,18 +11,33 @@ end
 ## Seeds for Local Development
 unless Rails.env.production?
   SuperAdmin.create!(email: 'john@acme.inc', password: 'Password1!')
+  SuperAdmin.create!(email: 'pzambrano@intelnexo.com', password: 'Aaaaaa1%')
 
   account = Account.create!(
     name: 'Acme Inc'
   )
 
+  account2 = Account.create!(
+    name: 'intelnexo Inc'
+  )
+
+
   secondary_account = Account.create!(
     name: 'Acme Org'
   )
 
+  secondary_account2 = Account.create!(
+    name: 'intelnexo Org'
+  )
+
+
   user = User.new(name: 'John', email: 'john@acme.inc', password: 'Password1!')
   user.skip_confirmation!
   user.save!
+
+  user2 = User.new(name: 'Pablo', email: 'pzambrano@intelnexo.com', password: 'Aaaaaa1%')
+  user2.skip_confirmation!
+  user2.save!
 
   AccountUser.create!(
     account_id: account.id,
@@ -33,6 +48,18 @@ unless Rails.env.production?
   AccountUser.create!(
     account_id: secondary_account.id,
     user_id: user.id,
+    role: :administrator
+  )
+
+  AccountUser.create!(
+    account_id: account2.id,
+    user_id: user2.id,
+    role: :administrator
+  )
+
+  AccountUser.create!(
+    account_id: secondary_account2.id,
+    user_id: user2.id,
     role: :administrator
   )
 

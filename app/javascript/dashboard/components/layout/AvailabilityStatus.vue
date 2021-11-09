@@ -115,6 +115,7 @@ export default {
       this.isStatusMenuOpened = false;
     },
     changeAvailabilityStatus(availability, accountId) {
+      console.log(availability)
       if (this.isUpdating) {
         return;
       }

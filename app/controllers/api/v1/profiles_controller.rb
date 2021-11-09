@@ -15,6 +15,7 @@ class Api::V1::ProfilesController < Api::BaseController
 
   def availability
     @user.account_users.find_by!(account_id: availability_params[:account_id]).update!(availability: availability_params[:availability])
+    @user.update!(profile_params)
   end
 
   private
@@ -33,6 +34,7 @@ class Api::V1::ProfilesController < Api::BaseController
       :name,
       :display_name,
       :avatar,
+      :availability,
       ui_settings: {}
     )
   end
