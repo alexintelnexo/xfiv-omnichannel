@@ -92,6 +92,9 @@ body {
   .conversations-list-wrap {
       width: 17rem!important;
   }
+  .app-content{
+    overflow: auto;
+  }
 }
 //tablets - Ipad
 @media (max-width: 1100px){

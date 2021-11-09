@@ -151,3 +151,28 @@
     }
   }
 }
+
+
+
+//móvil
+@media (max-width: 700px){
+  .conversation {
+    .conversation--message{
+      font-size: 1rem;
+    }
+    .conversation--meta{
+      top: 0.6rem;
+    }
+  }
+}
+
+@media (max-width: 1100px){
+  .conversation {
+    .conversation--message{
+      font-size: 1rem;
+    }
+    .conversation--meta{
+      top: 0.6rem;
+    }
+  }
+}
