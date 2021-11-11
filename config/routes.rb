@@ -73,6 +73,8 @@ Rails.application.routes.draw do
               post :toggle_typing_status
               post :update_last_seen
               post :custom_attributes
+              post :pinned
+              post :unpin
             end
           end
 

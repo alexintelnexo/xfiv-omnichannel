@@ -32,5 +32,16 @@ describe('#ConversationApi', () => {
         }
       );
     });
+
+    it('#pinConverstation', () => {
+      const converstationID = ['support-query'];
+        conversationsAPI.pinConverstation(1, converstationID);
+        expect(context.axiosMock.post).toHaveBeenCalledWith(
+        '/api/v1/conversations/1/pinned',
+        {
+          converstationID,
+        }
+      );
+    });
   });
 });

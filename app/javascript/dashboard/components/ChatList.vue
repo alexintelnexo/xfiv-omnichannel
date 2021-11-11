@@ -19,6 +19,53 @@
       {{ $t('CHAT_LIST.LIST.404') }}
     </p>
 
+    <div v-if="activeAssigneeTab === 'me' && !chatListLoading && conversationList.length != 0 && pinnedConvoArr.length !=  0">
+      <div class="pinned">
+      <span>
+        Pinned
+      </span></div>
+      <div ref="activePinConversation" class="conversations-list" v-if="pinnedConvoArr.length !=  0">
+        <pinned-conversation-card
+          v-for="chat in pinnedConvoArr"
+          :key="chat.id"
+          :active-label="label"
+          :team-id="teamId"
+          :chat="chat"
+          :show-assignee="showAssigneeInConversationCard"
+          :is-pinned="true"
+        />
+
+        <div v-if="chatListLoading" class="text-center">
+          <span class="spinner"></span>
+        </div>
+
+
+        <!-- <woot-button
+          v-if="!hasCurrentPageEndReached && !chatListLoading"
+          variant="clear"
+          size="expanded"
+          @click="fetchConversations"
+        >
+          {{ $t('CHAT_LIST.LOAD_MORE_CONVERSATIONS') }}
+        </woot-button> -->
+
+
+        <p
+          v-if="
+            pinnedConvoArr.length &&
+              hasCurrentPageEndReached &&
+              !chatListLoading
+          "
+          class="text-center text-muted end-of-list-text"
+        >
+          {{ $t('CHAT_LIST.EOF') }}
+        </p>
+      </div>
+    </div>
+
+    <span v-if="!chatListLoading && conversationList.length != 0 && activeAssigneeTab === 'me' && pinnedConvoArr.length !=  0" class="pinned">
+      All Chats
+    </span>
     <div ref="activeConversation" class="conversations-list">
       <conversation-card
         v-for="chat in conversationList"
@@ -27,6 +74,8 @@
         :team-id="teamId"
         :chat="chat"
         :show-assignee="showAssigneeInConversationCard"
+        :is-pinned="pinnedIdConvoArr.includes(chat.id)"
+        :is-mine="activeAssigneeTab === 'me'? true : false"
       />
 
       <div v-if="chatListLoading" class="text-center">
@@ -53,6 +102,7 @@
         {{ $t('CHAT_LIST.EOF') }}
       </p>
     </div>
+
   </div>
 </template>
 
@@ -62,10 +112,13 @@ import { mapGetters } from 'vuex';
 import ChatFilter from './widgets/conversation/ChatFilter';
 import ChatTypeTabs from './widgets/ChatTypeTabs';
 import ConversationCard from './widgets/conversation/ConversationCard';
+import PinnedConversationCard from './widgets/conversation/PinnedConversationCard';
 import timeMixin from '../mixins/time';
 import eventListenerMixins from 'shared/mixins/eventListenerMixins';
 import conversationMixin from '../mixins/conversations';
 import wootConstants from '../constants';
+import ConversationAPI from '../api/conversations'
+
 import {
   hasPressedAltAndJKey,
   hasPressedAltAndKKey,
@@ -75,6 +128,7 @@ export default {
   components: {
     ChatTypeTabs,
     ConversationCard,
+    PinnedConversationCard,
     ChatFilter,
   },
   mixins: [timeMixin, conversationMixin, eventListenerMixins],
@@ -96,6 +150,8 @@ export default {
     return {
       activeAssigneeTab: wootConstants.ASSIGNEE_TYPE.ME,
       activeStatus: wootConstants.STATUS_TYPE.OPEN,
+      pinnedConvoArr: [],
+      pinnedIdConvoArr: [],
     };
   },
   computed: {
@@ -189,13 +245,38 @@ export default {
       this.resetAndFetchData();
     },
   },
-  mounted() {
-    this.$store.dispatch('setChatFilter', this.activeStatus);
-    this.resetAndFetchData();
+  async mounted() {
+    try {
+      this.$store.dispatch('setChatFilter', this.activeStatus);
+      this.resetAndFetchData();
 
-    bus.$on('fetch_conversation_stats', () => {
-      this.$store.dispatch('conversationStats/get', this.conversationFilters);
-    });
+      bus.$on('fetch_conversation_stats', () => {
+        this.$store.dispatch('conversationStats/get', this.conversationFilters);
+      });
+
+      const response = await ConversationAPI.getAllPinConversations();
+      const pinnedConversations = response.data.data.meta.pinned_conversations;
+      const pinnedConvoIdArr = [];
+      for(let i = 0; i < pinnedConversations.length; i++) {
+        const singlePinnedConvo = pinnedConversations[i];
+        const id = singlePinnedConvo.id;
+        pinnedConvoIdArr.push(id);
+      }
+
+      this.pinnedIdConvoArr = pinnedConvoIdArr
+
+
+      const allConvoArr = JSON.parse(JSON.stringify(this.conversationList));
+      for(let key in allConvoArr){
+      const singleThisConversation = allConvoArr[key];
+        const id =  singleThisConversation.id;
+        if(pinnedConvoIdArr.includes(id))
+          this.pinnedConvoArr.push(singleThisConversation);
+      }
+    } catch(error) {
+      console.log("error in catch block")
+      console.log(error)
+    }
   },
   methods: {
     getKeyboardListenerParams() {
@@ -294,5 +375,11 @@ export default {
   @include breakpoint(xxxlarge up) {
     flex-basis: 46rem;
   }
+}
+.pinned{
+  margin: 0px 0px 0px 1rem;
+  border-bottom: 1px solid #f0f4f5;
+  padding: 1.2rem 0;
+  font-size: initial;
 }
 </style>

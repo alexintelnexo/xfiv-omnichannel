@@ -9,6 +9,7 @@ class Api::V1::Accounts::ConversationsController < Api::V1::Accounts::BaseContro
     result = conversation_finder.perform
     @conversations = result[:conversations]
     @conversations_count = result[:count]
+    @pinned_conversations = result[:pinned_conversations]
   end
 
   def meta
@@ -39,6 +40,19 @@ class Api::V1::Accounts::ConversationsController < Api::V1::Accounts::BaseContro
   def unmute
     @conversation.unmute!
     head :ok
+  end
+
+  def pinned
+    @conversation.pinned!
+    render json: {message: "Conversation Pinned"}, status: :ok
+  end
+
+  def unpin
+    if @conversation.unpin!
+      render json: {message: "Conversation UnPinned"}, status: :ok
+    else
+      render json: {message: "Conversation failed to UnPinned"}, status: :not_found
+    end
   end
 
   def transcript
