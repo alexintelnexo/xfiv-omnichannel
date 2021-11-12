@@ -331,7 +331,7 @@ export default {
       console.log(ConversationAPI, 'apicall')
       ConversationAPI.pinConverstation(converstationId).then((res)=> {
         //alert('conversation pinned successfully')
-        this.$router.go(this.$router.currentRoute)
+        this.$router.push(this.$router.currentRoute)
       }).catch((err)=> {
         console.log(err)
       });
@@ -341,7 +341,7 @@ export default {
       event.stopImmediatePropagation()
       ConversationAPI.unpinConverstation(converstationId).then((res)=> {
         //alert('conversation unpin successfully')
-        this.$router.go(this.$router.currentRoute)
+        this.$router.push(this.$router.currentRoute)
       }).catch((err)=> {
         console.log(err)
       });
