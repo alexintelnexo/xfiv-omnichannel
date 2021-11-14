@@ -5,6 +5,8 @@ const contacts = accountId => ({
     'contacts_dashboard',
     'contacts_dashboard_manage',
     'contacts_labels_dashboard',
+    'contacts_inboxes_dashboard',
+
   ],
   menuItems: {
     back: {

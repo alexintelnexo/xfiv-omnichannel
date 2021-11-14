@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_29_150415) do
+ActiveRecord::Schema.define(version: 2021_10_26_073758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
@@ -311,7 +311,7 @@ ActiveRecord::Schema.define(version: 2021_09_29_150415) do
     t.datetime "agent_last_seen_at"
     t.jsonb "additional_attributes", default: {}
     t.bigint "contact_inbox_id"
-    t.uuid "uuid", default: -> { "public.gen_random_uuid()" }, null: false
+    t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
     t.string "identifier"
     t.datetime "last_activity_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.bigint "team_id"
@@ -590,6 +590,16 @@ ActiveRecord::Schema.define(version: 2021_09_29_150415) do
     t.index ["primary_actor_type", "primary_actor_id"], name: "uniq_primary_actor_per_account_notifications"
     t.index ["secondary_actor_type", "secondary_actor_id"], name: "uniq_secondary_actor_per_account_notifications"
     t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "pinned_conversations", force: :cascade do |t|
+    t.integer "account_id", null: false
+    t.integer "assignee_id", null: false
+    t.integer "conversation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["assignee_id"], name: "index_pinned_conversations_on_assignee_id"
+    t.index ["conversation_id"], name: "index_pinned_conversations_on_conversation_id"
   end
 
   create_table "platform_app_permissibles", force: :cascade do |t|
