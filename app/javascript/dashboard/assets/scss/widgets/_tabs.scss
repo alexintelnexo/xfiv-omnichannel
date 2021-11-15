@@ -71,3 +71,29 @@
     }
   }
 }
+
+
+//móvil
+@media (max-width: 700px){
+  .tab--chat-type {   
+    .tabs-title {
+      a {
+        font-size: 1rem;
+        
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px){
+  .tab--chat-type {   
+    .tabs-title {
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+  .tabs {
+    padding: 0 0.6rem;
+  }
+}

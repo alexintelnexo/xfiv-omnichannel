@@ -15,7 +15,8 @@ class AccountDashboard < Administrate::BaseDashboard
     users: CountField,
     conversations: CountField,
     locale: Field::Select.with_options(collection: LANGUAGES_CONFIG.map { |_x, y| y[:iso_639_1_code] }),
-    account_users: Field::HasMany
+    account_users: Field::HasMany,
+    
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -29,6 +30,7 @@ class AccountDashboard < Administrate::BaseDashboard
     locale
     users
     conversations
+   
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -40,6 +42,7 @@ class AccountDashboard < Administrate::BaseDashboard
     updated_at
     locale
     conversations
+  
     account_users
   ].freeze
 
