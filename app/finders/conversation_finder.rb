@@ -27,6 +27,7 @@ class ConversationFinder
     assigned_count = all_count - unassigned_count
 
     filter_by_assignee_type
+    find_pinned_conversations
 
     {
       conversations: conversations,
@@ -35,7 +36,8 @@ class ConversationFinder
         assigned_count: assigned_count,
         unassigned_count: unassigned_count,
         all_count: all_count
-      }
+      },
+      pinned_conversations: @pinned_conversations
     }
   end
 
@@ -71,6 +73,10 @@ class ConversationFinder
 
   def find_all_conversations
     @conversations = current_account.conversations.where(inbox_id: @inbox_ids)
+  end
+
+  def find_pinned_conversations
+    @pinned_conversations = current_account.conversations.where(inbox_id: @inbox_ids).assigned_to(current_user).joins("join pinned_conversations pc on conversations.id = pc.conversation_id").uniq
   end
 
   def filter_by_assignee_type
