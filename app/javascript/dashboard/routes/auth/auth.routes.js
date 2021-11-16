@@ -1,6 +1,8 @@
 import Auth from './Auth';
 import Confirmation from './Confirmation';
 import Signup from './Signup';
+import Privacy from './Privacy';
+import Terms from './Terms';
 import PasswordEdit from './PasswordEdit';
 import ResetPassword from './ResetPassword';
 import { frontendURL } from '../../helper/URLHelper';
@@ -42,6 +44,16 @@ export default {
           path: 'reset/password',
           name: 'auth_reset_password',
           component: ResetPassword,
+        },
+        {
+          path: 'privacy',
+          name: 'auth_privacy',
+          component: Privacy,
+        },
+        {
+          path: 'terms',
+          name: 'auth_terms',
+          component: Terms,
         },
       ],
     },
