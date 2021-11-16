@@ -82,7 +82,7 @@
             button-class="large expanded"
           >
           </woot-submit-button>
-          <p class="accept--terms" v-html="termsLink"></p>
+          <p class="accept--terms">Al registrarte, aceptas nuestra <router-link to="terms">T & C</router-link> y nuestra <router-link to="privacy">política de privacidad</router-link></p>
         </form>
         <div class="column text-center sigin--footer">
           <span>{{ $t('REGISTER.HAVE_AN_ACCOUNT') }}</span>
