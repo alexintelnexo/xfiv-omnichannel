@@ -41,7 +41,7 @@ generateRoleWiseRoute(routes);
 
 export const router = new VueRouter({ mode: 'history', routes });
 
-const unProtectedRoutes = ['login', 'auth_signup', 'auth_reset_password'];
+const unProtectedRoutes = ['login', 'auth_signup', 'auth_reset_password', 'auth_privacy', 'auth_terms'];
 
 const authIgnoreRoutes = [
   'auth_confirmation',

@@ -43,6 +43,16 @@ export default {
           name: 'auth_reset_password',
           component: ResetPassword,
         },
+        {
+          path: 'privacy',
+          name: 'auth_privacy',
+          component: Privacy,
+        },
+        {
+          path: 'terms',
+          name: 'auth_terms',
+          component: Terms,
+        },
       ],
     },
   ],
