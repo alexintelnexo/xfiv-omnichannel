@@ -35,6 +35,13 @@
           :menu-item="contactLabelSection"
           @add-label="showAddLabelPopup"
         />
+        <!-- new entry item in contacts submenu -->
+        <sidebar-item
+          v-if="showShowContactSideMenu"
+          :key="contactInboxSection.key"
+          :menu-item="contactInboxSection"
+        />
+        <!-- new entry item in contacts submenu -->
       </transition-group>
     </div>
 
@@ -233,6 +240,32 @@ export default {
           truncateLabel: true,
           toState: frontendURL(
             `accounts/${this.accountId}/labels/${label.title}/contacts`
+          ),
+        })),
+      };
+    },
+    contactInboxSection() {
+      return {
+        icon: 'ion-folder',
+        label: 'INBOXES',
+        hasSubMenu: true,
+        newLink: false,
+        key: 'inbox',
+        cssClass: 'menu-title align-justify',
+        //toState: frontendURL(`accounts/${this.accountId}/settings/labels`),
+        toState: frontendURL(`accounts/${this.accountId}/settings/inboxes`),
+        toStateName: 'settings_inbox_list',
+        //showModalForNewItem: true,
+        //modalName: 'AddLabel',
+        children: this.inboxes.map(inbox => ({
+          id: inbox.id,
+          label: inbox.name,
+          //color: label.color,
+          truncateLabel: true,
+          type: inbox.channel_type,
+          phoneNumber: inbox.phone_number,
+          toState: frontendURL(
+            `accounts/${this.accountId}/inboxes/${inbox.id}/contacts`
           ),
         })),
       };

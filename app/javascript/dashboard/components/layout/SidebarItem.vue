@@ -1,58 +1,61 @@
 <template>
-  <router-link
-    :to="menuItem.toState"
-    tag="li"
-    active-class="active"
-    :class="computedClass"
-  >
-    <a
-      class="sub-menu-title"
-      :class="getMenuItemClass"
-      data-tooltip
-      aria-haspopup="true"
-      :title="menuItem.toolTip"
+  <div>
+    <router-link
+      :to="menuItem.toState"
+      tag="li"
+      active-class="active"
+      :class="computedClass"
     >
-      <div class="wrap">
-        <i :class="menuItem.icon" />
-        {{ $t(`SIDEBAR.${menuItem.label}`) }}
-      </div>
-      <span
-        v-if="showItem(menuItem)"
-        class="child-icon ion-android-add-circle"
-        @click.prevent="newLinkClick(menuItem)"
-      />
-    </a>
-    <ul v-if="menuItem.hasSubMenu" class="nested vertical menu">
-      <router-link
-        v-for="child in menuItem.children"
-        :key="child.id"
-        active-class="active flex-container"
-        tag="li"
-        :to="child.toState"
+      <a
+        class="sub-menu-title"
+        :class="getMenuItemClass"
+        data-tooltip
+        aria-haspopup="true"
+        :title="menuItem.toolTip"
       >
-        <a href="#" :class="computedChildClass(child)">
-          <div class="wrap">
-            <i
-              v-if="menuItem.key === 'inbox'"
-              class="inbox-icon"
-              :class="computedInboxClass(child)"
-            />
-            <span
-              v-if="child.color"
-              class="label-color--display"
-              :style="{ backgroundColor: child.color }"
-            />
-            <div
-              :title="computedChildTitle(child)"
-              :class="computedChildClass(child)"
-            >
-              {{ child.label }}
+        <div class="wrap">
+          <i :class="menuItem.icon" />
+          {{ $t(`SIDEBAR.${menuItem.label}`) }}
+        </div>
+        <span
+          v-if="showItem(menuItem)"
+          class="child-icon ion-android-add-circle"
+          @click.prevent="newLinkClick(menuItem)"
+        />
+      </a>
+      <ul v-if="menuItem.hasSubMenu" class="nested vertical menu">
+        <router-link
+          v-for="child in menuItem.children"
+          :key="child.id"
+          active-class="active flex-container"
+          tag="li"
+          :to="child.toState"
+        >
+          <a href="#" :class="computedChildClass(child)">
+            <div class="wrap">
+              <i
+                v-if="menuItem.key === 'inbox'"
+                class="inbox-icon"
+                :class="computedInboxClass(child)"
+              />
+              <span
+                v-if="child.color"
+                class="label-color--display"
+                :style="{ backgroundColor: child.color }"
+              />
+              <div
+                :title="computedChildTitle(child)"
+                :class="computedChildClass(child)"
+              >
+                {{ child.label }}
+              </div>
             </div>
-          </div>
-        </a>
-      </router-link>
-    </ul>
-  </router-link>
+          </a>
+        </router-link>
+      </ul>
+    </router-link>
+    
+  </div>
 </template>
 
 <script>

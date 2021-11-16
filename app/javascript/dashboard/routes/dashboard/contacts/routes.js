@@ -20,6 +20,15 @@ export const routes = [
     },
   },
   {
+    path: frontendURL('accounts/:accountId/inboxes/:inbox/contacts'),
+    name: 'contacts_inboxes_dashboard',
+    roles: ['administrator', 'agent'],
+    component: ContactsView,
+    props: route => {
+      return { inbox: route.params.inbox };
+    },
+  },
+  {
     path: frontendURL('accounts/:accountId/contacts/:contactId'),
     name: 'contacts_dashboard_manage',
     roles: ['administrator', 'agent'],

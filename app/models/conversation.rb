@@ -69,6 +69,8 @@ class Conversation < ApplicationRecord
   has_one :csat_survey_response, dependent: :destroy
   has_many :notifications, as: :primary_actor, dependent: :destroy
 
+  has_one :pinned_conversation, dependent: :destroy
+
   before_save :ensure_snooze_until_reset
   before_create :mark_conversation_pending_if_bot
 
@@ -114,6 +116,21 @@ class Conversation < ApplicationRecord
 
   def muted?
     Redis::Alfred.get(mute_key).present?
+  end
+
+  def pinned!
+    return unless Current.user
+    return unless assignee_id
+
+    pinned_conversation = PinnedConversation.find_or_initialize_by(conversation_params)
+    pinned_conversation.save
+  end
+
+  def unpin!
+    return unless Current.user
+
+    pinned_conversation = PinnedConversation.find_by(conversation_params)
+    pinned_conversation.destroy if pinned_conversation.present?
   end
 
   def unread_messages
@@ -194,6 +211,10 @@ class Conversation < ApplicationRecord
 
   def activity_message_params(content)
     { account_id: account_id, inbox_id: inbox_id, message_type: :activity, content: content }
+  end
+
+  def conversation_params
+    { account_id: account_id, assignee_id: assignee_id, conversation_id: id }
   end
 
   def notify_status_change
