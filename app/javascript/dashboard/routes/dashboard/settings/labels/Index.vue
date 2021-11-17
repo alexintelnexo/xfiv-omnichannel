@@ -9,7 +9,7 @@
       {{ $t('LABEL_MGMT.HEADER_BTN_TXT') }}
     </woot-button>
     <div class="row">
-      <div class="small-8 columns with-right-space ">
+      <div class="with-right-space ">
         <p
           v-if="!uiFlags.isFetching && !records.length"
           class="no-items-error-message"
@@ -69,7 +69,7 @@
         </table>
       </div>
 
-      <div class="small-4 columns">
+      <div class="">
         <span v-html="$t('LABEL_MGMT.SIDEBAR_TXT')"></span>
       </div>
     </div>

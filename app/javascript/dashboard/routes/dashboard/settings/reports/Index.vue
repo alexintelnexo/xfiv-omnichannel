@@ -10,18 +10,21 @@
     </woot-button>
 
     <report-date-range-selector @date-range-change="onDateRangeChange" />
-    <div class="row">
-      <woot-report-stats-card
-        v-for="(metric, index) in metrics"
-        :key="metric.NAME"
-        :desc="metric.DESC"
-        :heading="metric.NAME"
-        :index="index"
-        :on-click="changeSelection"
-        :point="accountSummary[metric.KEY]"
-        :selected="index === currentSelection"
-      />
+    <div class="content__stats">
+      <div class="row">
+        <woot-report-stats-card
+          v-for="(metric, index) in metrics"
+          :key="metric.NAME"
+          :desc="metric.DESC"
+          :heading="metric.NAME"
+          :index="index"
+          :on-click="changeSelection"
+          :point="accountSummary[metric.KEY]"
+          :selected="index === currentSelection"
+        />
+      </div>
     </div>
+
     <div class="report-bar">
       <woot-loading-state
         v-if="accountReport.isFetching"
@@ -116,7 +119,10 @@ export default {
     },
     downloadAgentReports() {
       const { from, to } = this;
-      const fileName = `agent-report-${format(fromUnixTime(to), 'dd-MM-yyyy')}.csv`;
+      const fileName = `agent-report-${format(
+        fromUnixTime(to),
+        'dd-MM-yyyy'
+      )}.csv`;
       this.$store.dispatch('downloadAgentReports', { from, to, fileName });
     },
     changeSelection(index) {
