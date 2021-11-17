@@ -113,3 +113,13 @@ $default-button-height: 4.0rem;
   right: $space-small;
   top: $space-small;
 }
+
+
+//móvil
+@media (max-width: 700px){
+  .button.success{
+    .button__content{
+      display: none;
+    }
+  } 
+}

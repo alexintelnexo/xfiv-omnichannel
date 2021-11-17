@@ -4,7 +4,7 @@
       :header-title="$t('CAMPAIGN.ADD.TITLE')"
       :header-content="$t('CAMPAIGN.ADD.DESC')"
     />
-    <form class="row" @submit.prevent="addCampaign">
+    <form class="" @submit.prevent="addCampaign">
       <div class="medium-12 columns">
         <woot-input
           v-model="title"
@@ -160,6 +160,7 @@
       <div class="modal-footer">
         <woot-button :is-loading="uiFlags.isCreating">
           {{ $t('CAMPAIGN.ADD.CREATE_BUTTON_TEXT') }}
+           
         </woot-button>
         <woot-button variant="clear" @click.prevent="onClose">
           {{ $t('CAMPAIGN.ADD.CANCEL_BUTTON_TEXT') }}
