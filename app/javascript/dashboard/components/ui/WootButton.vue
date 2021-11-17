@@ -12,6 +12,7 @@
       :emoji="emoji"
       :icon="icon"
     />
+    
     <span v-if="$slots.default" class="button__content"><slot></slot></span>
   </button>
 </template>

@@ -95,6 +95,7 @@
   @include flex;
   @include flex-weight(1 1 1px);
   @include margin($zero);
+  background-image: url('https://www.xfiv.chat/public/img/bg-chat.jpg');
   flex-direction: column;
   height: 100%;
   overflow-y: auto;

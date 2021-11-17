@@ -54,3 +54,27 @@
     }
   }
 }
+
+//móvil
+@media (max-width: 700px) {
+  .content-box {
+    .content__stats {
+      width: 100%;
+      display: flex;
+      overflow: auto;
+      .row {
+        justify-content: center;
+        flex-wrap: nowrap;
+        .report-card {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          .heading {
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

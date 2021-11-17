@@ -5,6 +5,11 @@
       <h1 class="page-title text-truncate" :title="pageTitle">
         {{ pageTitle }}
       </h1>
+      <router-link to="/app/accounts/1/userchannel" class="user__channel">
+        <div class="wrap">
+          <i class="ion-person"></i>
+        </div>
+      </router-link>
       <chat-filter @statusFilterChange="updateStatusType" />
     </div>
 
@@ -357,6 +362,15 @@ export default {
 .spinner {
   margin-top: var(--space-normal);
   margin-bottom: var(--space-normal);
+}
+
+.user__channel {
+  padding: 0rem 0.6rem;
+  background-color: #f9fafc;
+  border: 1px solid #e0e6ed;
+  font-size: 1.2rem;
+  width: auto;
+  border-radius: var(--border-radius-normal);
 }
 
 .conversations-list-wrap {
