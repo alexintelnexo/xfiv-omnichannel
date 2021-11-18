@@ -21,7 +21,7 @@ import { default as _teamsSettings } from './teamsSettings.json';
 import { default as _privacy } from './privacy.json';
 
 
-console.log(_privacy)
+
 export default {
   ..._agentMgmt,
   ..._attributesMgmt,
