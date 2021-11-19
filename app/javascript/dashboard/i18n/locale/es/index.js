@@ -19,7 +19,9 @@ import { default as _settings } from './settings.json';
 import { default as _signup } from './signup.json';
 import { default as _teamsSettings } from './teamsSettings.json';
 import { default as _privacy } from './privacy.json';
+import { default as _terms } from './terms.json';
 
+console.log(_terms)
 export default {
   ..._agentMgmt,
   ..._attributesMgmt,
@@ -42,4 +44,5 @@ export default {
   ..._signup,
   ..._teamsSettings,
   ..._privacy,
+  ..._terms,
 };
