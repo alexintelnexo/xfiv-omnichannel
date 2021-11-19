@@ -11,8 +11,18 @@ end
 
 ## Seeds for Local Development
 unless Rails.env.production?
+  SuperAdmin.destroy_all
+  User.destroy_all
+  Account.destroy_all
+  AccountUser.destroy_all
+  Inbox.destroy_all
+  InboxMember.destroy_all
+  Contact.destroy_all
+  ContactInbox.destroy_all
+  
   SuperAdmin.create!(email: 'john@acme.inc', password: 'Password1!')
   SuperAdmin.create!(email: 'pzambrano@intelnexo.com', password: 'Aaaaaa1%')
+  
 
   account = Account.create!(
     name: 'Acme Inc'
@@ -76,7 +86,18 @@ unless Rails.env.production?
   InboxMember.create!(user: user, inbox: inbox)
 
   contact = Contact.create!(name: 'jane', email: 'jane@example.com', phone_number: '+2320000', account: account)
+  contact2 = Contact.create!(name: 'jane', email: 'jane@examaple.com', phone_number: '+23457000', account: account)
   contact_inbox = ContactInbox.create!(inbox: inbox, contact: contact, source_id: user.id, hmac_verified: true)
+  conversation = Conversation.create!(
+    account: account,
+    inbox: inbox,
+    status: :open,
+    assignee: user,
+    contact: contact2,
+    contact_inbox: contact_inbox,
+    additional_attributes: {}
+  )
+
   conversation = Conversation.create!(
     account: account,
     inbox: inbox,

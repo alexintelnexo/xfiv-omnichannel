@@ -1,0 +1,40 @@
+{
+    "PRIVACY": {
+        "PRIV1": {
+            "TITLE": "Políticas de privacidade do Xfiv Chat",
+            "PAR1": "No chat do Xfiv, acessível a partir de www.Xfiv.com, uma das nossas principais prioridades é a privacidade dos nossos visitantes. Este documento de Política de Privacidade contém os tipos de informação recolhidos e registados pelo chat do Xfiv e como o utilizamos." ,
+            "PAR2": "Se você tiver perguntas adicionais ou precisar de mais informações sobre nossa Política de Privacidade, não hesite em nos contatar."
+        },
+        "PRIV2": {
+            "TITLE": "Arquivos de log",
+            "PAR1": "O chat do Xfiv segue um procedimento padrão para usar arquivos de log. Esses arquivos registram os visitantes quando eles visitam sites. Todas as empresas de hospedagem fazem isso e fazem parte da análise de serviços de hospedagem. As informações coletadas pelos arquivos de log incluem o protocolo da Internet ( Endereços IP), tipo de navegador, provedor de serviços de Internet (ISP), carimbo de data e hora, páginas de referência / saída e, possivelmente, o número de cliques. Eles não estão vinculados a nenhuma informação de identificação pessoal. A finalidade das informações é para analisar tendências, administrar o site, rastrear a movimentação de usuários no site e coletar informações demográficas. ",
+            "TITLE2": "Cookies e web beacons",
+            "PAR2": "Como qualquer outro site, o chat do Xfiv usa 'cookies'. Esses cookies são usados ​​para armazenar informações, incluindo as preferências do visitante e as páginas do site que o visitante acessou ou visitou. A informação é usada para otimizar a experiência do usuário, personalizando o conteúdo do nosso site com base no tipo de navegador do visitante e / ou outras informações. "
+        },
+        "PRIV3": {
+            "TITLE": "Políticas de privacidade",
+            "PAR1": "Pode consultar esta lista para encontrar a Política de Privacidade de cada um dos anunciantes parceiros do chat Xfiv.",
+            "PAR2": "Servidores de anúncios de terceiros ou redes de anúncios usam tecnologias como cookies, JavaScript ou Web Beacons que são usados ​​em seus respectivos anúncios e links que aparecem no bate-papo Xfiv, que são enviados diretamente para o navegador dos usuários. recebe automaticamente o seu endereço IP quando isso ocorre. Estas tecnologias são utilizadas para medir a eficácia das suas campanhas publicitárias e / ou para personalizar o conteúdo publicitário que vê nos sites que visita. ",
+            "PAR3": "Observe que o chat do Xfiv não tem acesso ou controle sobre esses cookies usados ​​por anunciantes terceiros."
+        },
+        "PRIV4": {
+            "TITLE": "Políticas de privacidade de terceiros",
+            "PAR1": "A Política de Privacidade do chat Xfiv não se aplica a outros anunciantes ou sites. Portanto, recomendamos que você consulte as respectivas Políticas de Privacidade desses servidores de anúncios de terceiros para obter informações mais detalhadas. Você pode incluir suas práticas e instruções sobre como para desativar certas opções. ",
+            "PAR2": "Você pode optar por desativar os cookies através das opções individuais do seu navegador. Informações mais detalhadas sobre o gerenciamento de cookies com navegadores específicos podem ser encontradas nos respectivos sites dos navegadores. O que são cookies?"
+        },
+        "PRIV5": {
+            "TITLE": "Informações para crianças",
+            "PAR1": "Outra parte de nossa prioridade é adicionar proteção para crianças durante o uso da Internet. Encorajamos os pais e responsáveis ​​a observar, participar e / ou monitorar e orientar sua atividade online.",
+            "PAR2": "Xfiv Chat não coleta intencionalmente nenhuma informação de identificação pessoal de crianças menores de 13 anos. Se você acredita que seu filho forneceu este tipo de informação em nosso site, recomendamos fortemente que você entre em contato conosco imediatamente e nós faremos nosso melhor fazê-lo imediatamente. remover essas informações de nossos registros. "
+        },
+        "PRIV6": {
+            "TITLE": "Apenas política de privacidade online",
+            "PAR1": "Esta Política de Privacidade aplica-se apenas às nossas atividades online e é válida para os visitantes do nosso site no que diz respeito às informações que compartilharam e / ou coletaram no chat Xfiv. Esta política não se aplica a qualquer informação coletada offline ou através de canais que não esse site. "
+        },
+        "PRIV7": {
+            "TITLE": "Consentimento",
+            "PAR1": "Ao utilizar o nosso site, aceita a nossa Política de Privacidade e aceita os seus Termos e Condições."
+        }
+    }
+}
+    
