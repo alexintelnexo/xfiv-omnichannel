@@ -34,7 +34,7 @@ class Api::V1::AccountsController < Api::BaseController
   end
 
   def update
-    @account.update!(account_params.slice(:name, :locale, :domain, :support_email, :auto_resolve_duration))
+    @account.update!(account_params.slice(:name, :locale, :domain, :support_email, :auto_resolve_duration, avatar))
   end
 
   def update_active_at
@@ -51,7 +51,7 @@ class Api::V1::AccountsController < Api::BaseController
   end
 
   def account_params
-    params.permit(:account_name, :email, :name, :password, :locale, :domain, :support_email, :auto_resolve_duration, :user_full_name)
+    params.permit(:account_name, :email, :name, :password, :locale, :domain, :support_email, :auto_resolve_duration, :user_full_name, :avatar)
   end
 
   def check_signup_enabled

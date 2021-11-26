@@ -19,6 +19,7 @@ class Account < ApplicationRecord
   include FlagShihTzu
   include Reportable
   include Featurable
+  include Avatarable
 
   DEFAULT_QUERY_SETTING = {
     flag_query_mode: :bit_operator,
