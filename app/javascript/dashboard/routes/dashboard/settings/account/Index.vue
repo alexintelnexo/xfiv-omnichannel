@@ -76,6 +76,15 @@
               {{ $t('GENERAL_SETTINGS.FORM.AUTO_RESOLVE_DURATION.ERROR') }}
             </span>
           </label>
+
+          <!-- custom_logo -->
+          <woot-avatar-uploader
+            label="Logo "
+            :src="avatarUrl"
+            @change="handleImageUpload"
+          />
+          <!-- custom_logo -->
+
         </div>
       </div>
       <div class="current-version">
@@ -120,6 +129,9 @@ export default {
       supportEmail: '',
       features: {},
       autoResolveDuration: null,
+      // isUpdating: false,
+      avatarFile: '',
+      avatarUrl: '',
       latestChatwootVersion: null,
     };
   },
@@ -186,6 +198,7 @@ export default {
           custom_email_domain_enabled,
           features,
           auto_resolve_duration,
+          avatar_url, //logo
           latest_chatwoot_version: latestChatwootVersion,
         } = this.getAccount(this.accountId);
 
@@ -198,6 +211,7 @@ export default {
         this.customEmailDomainEnabled = custom_email_domain_enabled;
         this.features = features;
         this.autoResolveDuration = auto_resolve_duration;
+        this.avatarUrl = avatar_url; //logo
         this.latestChatwootVersion = latestChatwootVersion;
       } catch (error) {
         // Ignore error
@@ -210,6 +224,7 @@ export default {
         this.showAlert(this.$t('GENERAL_SETTINGS.FORM.ERROR'));
         return;
       }
+      // this.isUpdating = true;
       try {
         await this.$store.dispatch('accounts/update', {
           locale: this.locale,
@@ -217,12 +232,18 @@ export default {
           domain: this.domain,
           support_email: this.supportEmail,
           auto_resolve_duration: this.autoResolveDuration,
+          avatar: this.avatarFile,
         });
+        // this.isUpdating = false;
         this.$root.$i18n.locale = this.locale;
         this.showAlert(this.$t('GENERAL_SETTINGS.UPDATE.SUCCESS'));
       } catch (error) {
         this.showAlert(this.$t('GENERAL_SETTINGS.UPDATE.ERROR'));
       }
+    },
+    handleImageUpload({ file, url }) {
+      this.avatarFile = file;
+      this.avatarUrl = url;
     },
   },
 };
